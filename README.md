@@ -20,11 +20,6 @@ Ensure Python (3.7 or newer) is installed. If not, download and install from htt
 
     pip install -r requirements.txt
     
-4- Now run app.py :
-
-    pyhton app.py
-
-5- A link will be provided like ( 127.0.0.1:3000 ). Open that link in your browser.
 
 # Installation For Linux 🐧:
 
@@ -59,7 +54,7 @@ Ensure Python3 is present 🐍:
 
 2- Navigating to the Web Interface 🖥️:
 
-   With the server active, open your browser and visit:
+With the server active, open your browser and visit:
 
    http://localhost:5000/
 
