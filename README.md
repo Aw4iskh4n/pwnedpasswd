@@ -43,7 +43,7 @@ Ensure Python3 is present 🐍:
 
 3- Download the required packages 📥:
 
-    pip3 install -r requirements.txt
+    sudo pip3 install -r requirements.txt
 
 
 # Usage 🚀:
