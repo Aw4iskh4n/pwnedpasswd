@@ -1,4 +1,4 @@
-# pwnedpasswd 🛡️
+# pwnedpasswd
 
 It is a secure tool that allows users to check if their passwords have been exposed in known data breaches. Harnessing the power of Python 🐍 and Flask, it ensures that user passwords are not sent or stored, offering peace of mind about online security.
 
@@ -11,11 +11,11 @@ https://pwnedpasswd.pythonanywhere.com/
 # Installation For Windows 🪟
 
 
-### Prerequisites 📋:
+### Prerequisites :
 
 Ensure Python (3.7 or newer) is installed. If not, download and install from https://www.python.org/downloads/.
 
-### Installation Steps ⚙️:
+### Installation Steps :
 
 1- Download this respository and unzip it.
 
@@ -28,36 +28,36 @@ Ensure Python (3.7 or newer) is installed. If not, download and install from htt
 
 # Installation For Linux 🐧:
 
-### Prerequisites 📋:
+### Prerequisites :
 
-Ensure Python3 is present 🐍:
+Ensure Python3 is present :
 
     sudo apt-get update
 
     sudo apt-get install python3 python3-pip
 
-### Installation Steps ⚙️:
+### Installation Steps :
 
-1- Clone the repository 📦:
+1- Clone the repository :
 
     git clone https://github.com/Aw4iskh4n/pwnedpasswd.git
 
-2- Enter the project directory 📁:
+2- Enter the project directory :
 
     cd pwnedpasswd
 
-3- Download the required packages 📥:
+3- Download the required packages :
 
     sudo pip3 install -r requirements.txt
 
 
 # Usage 🚀:
 
-1- Starting the Server 🌐:
+1- Starting the Server :
 
     python app.py
 
-2- Navigating to the Web Interface 🖥️:
+2- Navigating to the Web Interface :
 
 With the server active, open your browser and visit:
 
