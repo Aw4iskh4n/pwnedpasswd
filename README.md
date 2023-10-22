@@ -3,7 +3,7 @@
 It is a secure tool that allows users to check if their passwords have been exposed in known data breaches. Harnessing the power of Python 🐍 and Flask, it ensures that user passwords are not sent or stored, offering peace of mind about online security.
 
 
-# Installation For Windows 🖼️
+# Installation For Windows 🪟
 
 
 ### Prerequisites 📋:
@@ -25,3 +25,46 @@ Ensure Python (3.7 or newer) is installed. If not, download and install from htt
     pyhton app.py
 
 5- A link will be provided like ( 127.0.0.1:3000 ). Open that link in your browser.
+
+# Installation For Linux 🐧:
+
+### Prerequisites 📋:
+
+Ensure Python3 is present 🐍:
+
+    sudo apt-get update
+
+    sudo apt-get install python3 python3-pip
+
+### Installation Steps ⚙️:
+
+1- Clone the repository 📦:
+
+    git clone https://github.com/YourUsername/pwnedpasswd.git
+
+2- Enter the project directory 📁:
+
+    cd pwnedpasswd
+
+3- Download the required packages 📥:
+
+    pip3 install -r requirements.txt
+
+
+# Usage 🚀:
+
+1- Starting the Server 🌐:
+
+    python run.py
+
+2- Navigating to the Web Interface 🖥️:
+
+   With the server active, open your browser and visit:
+
+   http://localhost:5000/
+
+3- Inspecting Your Password 🔒:
+
+On the user interface, key in your password in the given field and hit "Check".
+The tool will alert you if your password has been compromised in any known breaches.
+
