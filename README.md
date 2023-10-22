@@ -50,7 +50,7 @@ Ensure Python3 is present 🐍:
 
 1- Starting the Server 🌐:
 
-    python run.py
+    python app.py
 
 2- Navigating to the Web Interface 🖥️:
 
