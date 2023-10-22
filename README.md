@@ -35,7 +35,7 @@ Ensure Python3 is present 🐍:
 
 1- Clone the repository 📦:
 
-    git clone https://github.com/YourUsername/pwnedpasswd.git
+    git clone https://github.com/Aw4iskh4n/pwnedpasswd.git
 
 2- Enter the project directory 📁:
 
