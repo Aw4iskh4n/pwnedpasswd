@@ -14,7 +14,15 @@ Ensure Python (3.7 or newer) is installed. If not, download and install from htt
 #### Installation Steps ⚙️:
 
 1- Download this respository and unzip it.
+
 2- Open cmd and navigate to the pwnedpasswd folder.
+
 3- Install requirements by running this command :
+
     pip install -r requirements.txt
-4
+    
+4- Now run app.py :
+
+    pyhton app.py
+
+5- A link will be provided like ( 127.0.0.1:3000 ). Open that link in your browser.
