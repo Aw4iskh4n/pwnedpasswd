@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Checker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        body {
+            content: "";
+            background-image: url(Images/image.png);
+            /* Replace with your image URL or path */
+            background-size: cover;
+            /* This will make sure your background image covers the entire viewport */
+            background-repeat: no-repeat;
+            /* This prevents the image from repeating */
+            background-attachment: fixed;
+            /* This makes the background image fixed in place */
+            color: white;
+
+            font-size: 1.2rem;
+        }
+
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            margin: 0px 28px
+        }
+
+        button {
+            font-size: 1.2rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        button {
+            font-size: 1.2rem;
+            /* background: linear-gradient(to right, #f64f59, #c471ed); */
+            background-color: #0b71c5 !important;
+            border: none !important;
+            color: rgb(255, 255, 255) !important;
+            transition: all 0.32s;
+        }
+
+
+
+        button:hover {
+            background-color: #1087e9 !important;
+            transition: all 0.32s;
+        }
+
+        .result-card {
+            background: rgb(0 91 127 / 18%);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 7px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .row .text-success {
+            color: #083c14 !important;
+        }
+
+        .result-card .icon-col i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .result-card .password-col {
+            font-weight: 500;
+        }
+
+        .result-card .status-col {
+            font-weight: bold;
+        }
+
+        .result-card .times-col {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            display: none;
+        }
+
+        .text-center {
+            text-align: left !important;
+        }
+
+        .row div#loading.mt-4 {
+            justify-content: center;
+        }
+
+        .row .text-danger {
+            color: #81000d !important;
+        }
+
+        /* Footer Styles */
+        .footer {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+
+        .footer a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #0b71c5;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .txt {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .result-card .status-col {
+            text-align: center !important;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 576px) {
+            body {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            body {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Improved UX for Mobile */
+        button,
+        textarea {
+            font-size: 1rem;
+        }
+
+        @media (min-width: 768px) {
+
+            button,
+            textarea {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Responsive Layout Adjustments */
+        .result-card .password-col,
+        .result-card .times-col,
+        .result-card .status-col {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 768px) {
+
+            .result-card .password-col,
+            .result-card .times-col {
+                text-align: left;
+            }
+
+            .result-card .status-col {
+                text-align: right;
+            }
+
+            .result-card .password-col,
+            .result-card .times-col,
+            .result-card .status-col {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- Creator's social media links in the top right corner with top and right margins -->
+        <div class="text-right mt-4 mr-3" style="margin-right: 30px !important;">
+            Follow the creator:
+            <a href="https://www.instagram.com/_mohmdawais/" target="_blank" class="text-white mx-2"
+                title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/muhammad-awais-6b8aba294/" target="_blank" class="text-white mx-2"
+                title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Aw4iskh4n" target="_blank" class="text-white mx-2" title="GitHub"><i
+                    class="fab fa-github"></i></a>
+        </div>
+        <!-- End of social media links -->
+    </header>
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 box">
+
+
+                <h2 class="text-center mb-4" style="color: #2a2a2a !important;">Password Checker <i class="fas fa-lock"></i></h2>
+                <label for="passwords" >Enter Passwords (one per line):</label>
+                <textarea id="passwords" class="form-control mb-4" rows="6"></textarea>
+                <button class="btn btn-block" onclick="checkPasswords()">Check Passwords</button>
+
+                <!-- Spinner for loading indication -->
+                <div id="loading" class="d-flex mt-4">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+
+                <div id="results" class="mt-4">
+                    <!-- Display results here -->
+
+
+                </div>
+
+                <div class="text-center mt-4">
+                    <div class="txt">Follow the creator on:</div>
+                    <div class="icons">
+                        <a href="https://github.com/Aw4iskh4n" target="_blank" class="text-white mx-2" title="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/_mohmdawais/" target="_blank" class="text-white mx-2"
+                            title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/muhammad-awais-6b8aba294/" target="_blank"
+                            class="text-white mx-2" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 footer">
+                <p>Connect with the creator:</p>
+                <a href="https://www.instagram.com/your_username/" target="_blank" rel="noopener noreferrer"
+                    title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/your_username" target="_blank" rel="noopener noreferrer" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/your_username/" target="_blank" rel="noopener noreferrer"
+                    title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function checkPasswords() {
+            const passwords = $("#passwords").val();
+
+            // Show the loading spinner
+            $(".spinner-border").show();
+            $("#results").hide();
+
+            $.post("/check", { passwords: passwords }, function (data) {
+                let html = '';
+                for (let [pwd, count] of data.results) {
+                    if (count == 0) {
+                        html += `
+                        <div class="result-card row">
+                            <div class="col-md-4 password-col">${pwd}</div>
+                            <div class="col-md-4 times-col text-success">0 times</div>
+                            <div class="col-md-4 status-col text-center icon-col">
+                                <i class="fas fa-check-circle text-success"></i> Safe
+                            </div>
+                        </div>`;
+                    } else {
+                        html += `
+                        <div class="result-card row">
+                            <div class="col-md-4 password-col">${pwd}</div>
+                            <div class="col-md-4 times-col text-danger">${count} times</div>
+                            <div class="col-md-4 status-col text-center icon-col">
+                                <i class="fas fa-times-circle text-danger"></i> Unsafe
+                            </div>
+                        </div>`;
+                    }
+                }
+
+                // Hide the loading spinner and show results
+                $(".spinner-border").hide();
+                $("#results").html(html).show();
+            });
+        }
+
+    </script>
+</body>
+
+</html>
